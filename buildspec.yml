@@ -6,11 +6,10 @@ phases:
   build:
     commands:
     - echo "Entered build phase"
-    - mvn clean prepare-package war:exploded
+    - mvn clean install
   post_build:
     commands:
     - echo "Entered post build phase"
-    - mv target/deploy ./
 artifacts:
   files:
-    - deploy/**/*
+    - target/spring-aws-elastic-bean-stack-1.0.2-SNAPSHOT.jar
